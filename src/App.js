@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
+import {connect} from 'react-redux';
 import {
     AppBar,
     BottomNavigation,
@@ -23,8 +24,9 @@ import {
 } from '@material-ui/icons';
 import {withStyles} from '@material-ui/core/styles';
 import withRoot from './withRoot';
-import './App.css';
+import './assets/css/App.css';
 import Dashboard from './Dashboard/dashboard';
+import * as actions from './actions/index';
 
 const styles = theme => ({
     root: {
@@ -50,7 +52,6 @@ const styles = theme => ({
 class App extends Component {
     state = {
         anchorEl: null,
-        bottomNavValue: 0
     };
 
     handleMenuClick = event => {
@@ -65,11 +66,9 @@ class App extends Component {
         this.setState({bottomNavValue});
     };
 
-
     render() {
         const {classes} = this.props;
         const {anchorEl} = this.state;
-        const {bottomNavValue} = this.state;
 
         return (
             <div className={classes.root}>
@@ -124,7 +123,7 @@ class App extends Component {
                 </AppBar>
                 <Dashboard className={classes.dashboard}/>
                 <BottomNavigation
-                    value={bottomNavValue}
+                    value={this.props.bottomNavValue}
                     onChange={this.handleBottomNavChange}
                     showLabels
                     className={classes.footer}
@@ -144,4 +143,17 @@ class App extends Component {
     }
 }
 
-export default withRoot(withStyles(styles)(App));
+const mapDispatchToProps = dispatch => {
+    return {
+        setNavIndex: (selectedIndex) => dispatch(actions.setNavIndex(selectedIndex)),
+        getNavIndex: () => dispatch(actions.getNavIndex())
+    };
+};
+
+const mapStateToProps = (state) => {
+    return {
+        bottomNavValue: state.nav.selected
+    }
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(withRoot(withStyles(styles)(App)));
