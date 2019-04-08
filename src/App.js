@@ -1,21 +1,29 @@
 import React, {Component} from 'react';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
-import Menu from '@material-ui/core/Menu';
-import MenuItem from '@material-ui/core/MenuItem';
-import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
-import Fade from '@material-ui/core/Fade';
-import BottomNavigation from '@material-ui/core/BottomNavigation';
-import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
-import RestoreIcon from '@material-ui/icons/Restore';
-import FavoriteIcon from '@material-ui/icons/Favorite';
-import LocationOnIcon from '@material-ui/icons/LocationOn';
+import {Link} from 'react-router-dom';
+import {
+    AppBar,
+    BottomNavigation,
+    BottomNavigationAction,
+    Fade,
+    IconButton,
+    ListItemIcon,
+    ListItemText,
+    Menu,
+    MenuItem,
+    Toolbar,
+    Typography
+} from '@material-ui/core';
+import {
+    Assignment as AssignmentIcon,
+    Code as CodeIcon,
+    Dashboard as DashboardIcon,
+    LocationOn as LocationOnIcon,
+    Menu as MenuIcon,
+    Work as WorkIcon
+} from '@material-ui/icons';
 import {withStyles} from '@material-ui/core/styles';
 import withRoot from './withRoot';
 import './App.css';
-
 import Dashboard from './Dashboard/dashboard';
 
 const styles = theme => ({
@@ -25,11 +33,18 @@ const styles = theme => ({
     },
     navTitle: {
         flexGrow: 1,
+        textAlign: 'center',
     },
     anchorEl: {
         marginLeft: -12,
         marginRight: 20,
     },
+    dashboard: {
+        flexGrow: 1,
+    },
+    footer: {
+        flexGrow: 1,
+    }
 });
 
 class App extends Component {
@@ -71,27 +86,58 @@ class App extends Component {
                             onClose={this.handleMenuClose}
                             TransitionComponent={Fade}
                         >
-                            <MenuItem onClick={this.handleMenuClose}>Experience</MenuItem>
-                            <MenuItem onClick={this.handleMenuClose}>Education</MenuItem>
-                            <MenuItem onClick={this.handleMenuClose}>Projects</MenuItem>
-                            <MenuItem onClick={this.handleMenuClose}>Contact Information</MenuItem>
+                            <MenuItem onClick={this.handleMenuClose} component={Link} to="/">
+                                <ListItemIcon className={classes.icon}>
+                                    <DashboardIcon/>
+                                </ListItemIcon>
+                                <ListItemText classes={{primary: classes.primary}} inset primary="Overview"/>
+                            </MenuItem>
+                            <MenuItem onClick={this.handleMenuClose} component={Link} to="/experience">
+                                <ListItemIcon className={classes.icon}>
+                                    <WorkIcon/>
+                                </ListItemIcon>
+                                <ListItemText classes={{primary: classes.primary}} inset primary="Experience"/>
+                            </MenuItem>
+                            <MenuItem onClick={this.handleMenuClose} component={Link} to="/education">
+                                <ListItemIcon className={classes.icon}>
+                                    <AssignmentIcon/>
+                                </ListItemIcon>
+                                <ListItemText classes={{primary: classes.primary}} inset primary="Education"/>
+                            </MenuItem>
+                            <MenuItem onClick={this.handleMenuClose} component={Link} to="/projects">
+                                <ListItemIcon className={classes.icon}>
+                                    <CodeIcon/>
+                                </ListItemIcon>
+                                <ListItemText classes={{primary: classes.primary}} inset primary="Projects"/>
+                            </MenuItem>
+                            <MenuItem onClick={this.handleMenuClose} component={Link} to="/contact_info">
+                                <ListItemIcon className={classes.icon}>
+                                    <LocationOnIcon/>
+                                </ListItemIcon>
+                                <ListItemText classes={{primary: classes.primary}} inset primary="Contact Information"/>
+                            </MenuItem>
                         </Menu>
                         <Typography variant="h6" color="inherit" className={classes.navTitle}>
                             Ishan Kaul Resume
                         </Typography>
                     </Toolbar>
                 </AppBar>
-                <Dashboard/>
+                <Dashboard className={classes.dashboard}/>
                 <BottomNavigation
                     value={bottomNavValue}
                     onChange={this.handleBottomNavChange}
                     showLabels
-                    className={classes.root}
+                    className={classes.footer}
                 >
-                    <BottomNavigationAction label="Experience" icon={<RestoreIcon/>}/>
-                    <BottomNavigationAction label="Education" icon={<FavoriteIcon/>}/>
-                    <BottomNavigationAction label="Projects" icon={<LocationOnIcon/>}/>
-                    <BottomNavigationAction label="Contact Information" icon={<LocationOnIcon/>}/>
+                    <BottomNavigationAction component={Link} to="/" label="Overview" icon={<DashboardIcon/>}/>
+                    <BottomNavigationAction component={Link} to="/experience" label="Experience"
+                                            icon={<WorkIcon/>}/>
+                    <BottomNavigationAction component={Link} to="/education" label="Education"
+                                            icon={<AssignmentIcon/>}/>
+                    <BottomNavigationAction component={Link} to="/projects" label="Projects"
+                                            icon={<CodeIcon/>}/>
+                    <BottomNavigationAction component={Link} to="/contact_info" label="Contact Information"
+                                            icon={<LocationOnIcon/>}/>
                 </BottomNavigation>
             </div>
         );
