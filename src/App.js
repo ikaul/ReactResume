@@ -24,7 +24,6 @@ import {
 } from '@material-ui/icons';
 import {withStyles} from '@material-ui/core/styles';
 import withRoot from './withRoot';
-import './assets/css/App.css';
 import Dashboard from './Dashboard/dashboard';
 import * as actions from './actions/index';
 

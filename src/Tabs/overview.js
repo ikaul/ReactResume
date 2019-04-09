@@ -1,6 +1,23 @@
 import React, {Component} from 'react';
 import * as actions from "../actions";
 import {connect} from "react-redux";
+import avatar from '../assets/images/avatar.gif';
+import {withStyles} from '@material-ui/core/styles';
+import {Avatar, Divider, Grid} from '@material-ui/core';
+import withRoot from "../withRoot";
+
+const styles = theme => ({
+    paper: {
+        textAlign: 'center',
+        padding: theme.spacing.unit * 20,
+        color: theme.palette.text.secondary,
+    },
+    avatar: {
+        margin: 10,
+        width: 200,
+        height: 200,
+    }
+});
 
 class Overview extends Component {
     componentDidMount() {
@@ -8,8 +25,17 @@ class Overview extends Component {
     }
 
     render() {
+        const {classes} = this.props;
         return (
-            <h3>Overview</h3>
+            <div>
+                <h3>Overview</h3>
+                <Divider/>
+                <Grid container spacing={24}>
+                    <Grid item xs={4} className={classes.paper}>
+                        <Avatar alt="Ishan Kaul Avatar" src={avatar} className={classes.avatar}/>
+                    </Grid>
+                </Grid>
+            </div>
         );
     }
 }
@@ -20,4 +46,4 @@ const mapDispatchToProps = dispatch => {
     };
 };
 
-export default connect(null, mapDispatchToProps)(Overview);
+export default connect(null, mapDispatchToProps)(withRoot(withStyles(styles)(Overview)));

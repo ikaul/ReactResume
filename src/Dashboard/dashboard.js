@@ -16,11 +16,12 @@ import NotFound from '../not_found';
 
 const styles = theme => ({
     paper: {
-        padding: theme.spacing.unit * 20,
-        textAlign: 'center',
+        padding: theme.spacing.unit * 5,
+        textAlign: 'left',
         color: theme.palette.text.secondary,
         height: '80vh'
     },
+
 });
 
 class Dashboard extends Component {

@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import * as actions from "../actions";
 import {connect} from "react-redux";
+import {Divider} from "@material-ui/core";
 
 class Projects extends Component {
     componentDidMount() {
@@ -9,7 +10,10 @@ class Projects extends Component {
 
     render() {
         return (
-            <h3>Projects</h3>
+            <div>
+                <h3>Projects</h3>
+                <Divider/>
+            </div>
         );
     }
 }
