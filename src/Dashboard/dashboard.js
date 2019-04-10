@@ -18,7 +18,6 @@ const styles = theme => ({
     paper: {
         padding: theme.spacing.unit * 10,
         textAlign: 'left',
-        color: theme.palette.text.secondary,
         height: '85vh',
         maxHeight: '100%',
         overflow: 'auto'

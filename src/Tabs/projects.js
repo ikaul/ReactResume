@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import * as actions from "../actions";
 import {connect} from "react-redux";
-import {Divider} from "@material-ui/core";
+import {Divider, Typography} from "@material-ui/core";
 
 class Projects extends Component {
     componentDidMount() {
@@ -11,7 +11,7 @@ class Projects extends Component {
     render() {
         return (
             <div>
-                <h3>Projects</h3>
+                <Typography variant="h4" gutterBottom>Projects</Typography>
                 <Divider/>
             </div>
         );
