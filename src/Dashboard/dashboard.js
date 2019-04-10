@@ -16,12 +16,13 @@ import NotFound from '../not_found';
 
 const styles = theme => ({
     paper: {
-        padding: theme.spacing.unit * 5,
+        padding: theme.spacing.unit * 10,
         textAlign: 'left',
         color: theme.palette.text.secondary,
-        height: '80vh'
+        height: '85vh',
+        maxHeight: '100%',
+        overflow: 'auto'
     },
-
 });
 
 class Dashboard extends Component {
@@ -37,7 +38,7 @@ class Dashboard extends Component {
                             <Route exact path="/education" component={Education}/>
                             <Route exact path="/projects" component={Projects}/>
                             <Route exact path="/contact_info" component={ContactInfo}/>
-                            <Route component={NotFound} />
+                            <Route component={NotFound}/>
                         </Switch>
                     </Paper>
                 </Grid>

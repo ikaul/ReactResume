@@ -29,6 +29,7 @@ import * as actions from './actions/index';
 
 const styles = theme => ({
     root: {
+        ...theme.mixins.gutters(),
         textAlign: 'center',
         flexGrow: 1,
     },
