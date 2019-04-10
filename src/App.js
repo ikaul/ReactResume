@@ -24,12 +24,12 @@ import {
 } from '@material-ui/icons';
 import {withStyles} from '@material-ui/core/styles';
 import withRoot from './withRoot';
-import './assets/css/App.css';
 import Dashboard from './Dashboard/dashboard';
 import * as actions from './actions/index';
 
 const styles = theme => ({
     root: {
+        ...theme.mixins.gutters(),
         textAlign: 'center',
         flexGrow: 1,
     },

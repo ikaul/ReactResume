@@ -1,7 +1,7 @@
 import React from 'react';
 import {BrowserRouter} from 'react-router-dom';
 import ReactDOM from 'react-dom';
-import './assets/css/index.css';
+import './assets/styles/index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import {applyMiddleware, compose, createStore} from 'redux';
