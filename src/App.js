@@ -27,6 +27,11 @@ import withRoot from './withRoot';
 import Dashboard from './Dashboard/dashboard';
 import * as actions from './actions/index';
 
+import {library} from '@fortawesome/fontawesome-svg-core';
+import {fab} from '@fortawesome/free-brands-svg-icons';
+
+library.add(fab);
+
 const styles = theme => ({
     root: {
         ...theme.mixins.gutters(),

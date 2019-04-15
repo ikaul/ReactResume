@@ -13,6 +13,9 @@ class Projects extends Component {
             <div>
                 <Typography variant="h4" gutterBottom>Projects</Typography>
                 <Divider/>
+                <Typography variant="body1" gutterBottom>
+                    Work in Progress!
+                </Typography>
             </div>
         );
     }
