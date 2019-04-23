@@ -112,7 +112,7 @@ class Experience extends Component {
                                     Staff Software Engineer
                                 </Typography>
                                 <Typography variant="subtitle1" color="textSecondary">
-                                    Aug 2013 - Present
+                                    Oct 2014 - Present
                                 </Typography>
                             </CardContent>
 

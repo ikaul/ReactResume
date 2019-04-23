@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {
     Avatar,
-    Chip, Typography,
+    Chip,
 } from "@material-ui/core";
 import {withStyles} from "@material-ui/core/es/styles";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
