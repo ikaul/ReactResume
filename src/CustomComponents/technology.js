@@ -6,7 +6,9 @@ import {
 import {withStyles} from "@material-ui/core/es/styles";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import withRoot from "../withRoot";
-import {blue, grey, red} from "@material-ui/core/colors";
+import {blue, grey, red, blueGrey} from "@material-ui/core/colors";
+import postgres from '../assets/images/psql.svg';
+import rails from '../assets/images/rails.png';
 
 const styles = theme => ({
     chip: {
@@ -22,12 +24,19 @@ const styles = theme => ({
     },
     pythonAvatar: {
         color: blue[500],
-        backgroundColor: grey[200]
+        backgroundColor: blueGrey[200]
     },
     railsAvatar: {
         color: grey[50],
         backgroundColor: red[900]
     },
+    postgresAvatar: {
+        backgroundColor: blueGrey[50]
+    },
+    defaultAvatar: {
+        color: blueGrey[50],
+        backgroundColor: blueGrey[900]
+    }
 });
 
 class Technology extends Component {
@@ -45,8 +54,12 @@ class Technology extends Component {
                 return (<Avatar className={classes.angularAvatar}>
                     <FontAwesomeIcon icon={['fab', 'angular']}/>
                 </Avatar>);
+            case 'postgresql':
+                return (<Avatar className={classes.postgresAvatar} src={postgres} />);
+            case 'ruby on rails':
+                return (<Avatar className={classes.railsAvatar} src={rails} />);
             default:
-                return (<Avatar className={""}>{technologyName.toUpperCase()[0]}</Avatar>);
+                return (<Avatar className={classes.defaultAvatar}>{technologyName.toUpperCase()[0]}</Avatar>);
         }
     };
 
