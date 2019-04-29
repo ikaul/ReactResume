@@ -53,8 +53,8 @@ class Technology extends Component {
     render() {
         const {classes} = this.props;
         return (
-                <Chip className={classes.chip} label={this.props.label} variant="outlined"
-                      avatar={this.technologyIcon(this.props.label, classes) }/>
+            <Chip className={classes.chip} label={this.props.label} variant="outlined"
+                  avatar={this.technologyIcon(this.props.label, classes)}/>
         )
     }
 }
