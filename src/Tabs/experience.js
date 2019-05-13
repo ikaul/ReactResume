@@ -158,22 +158,36 @@ class Experience extends Component {
                                     </Typography>
                                     <List disablePadding>
                                         <ListItem>
-                                            <ListItemText primary=" Pulse Analytics Portal"
-                                                          secondary="Web Portal to import & analyze telemetry data along with NetSuite Customer data
+                                            <Grid container spacing={24}>
+                                                <Grid item xs={12} lg={4}>
+                                                    <ListItemText primary=" Pulse Analytics Portal"
+                                                                  secondary="Web Portal to import & analyze telemetry data along with NetSuite Customer data
                                                           to see how the customer uses our equipment and how our products are doing in the market."/>
-                                            <ListItemText primary="Bill of Materials Generator"
-                                                          secondary="Tool to help sales team generate bill of materials for customer orders with ease
+                                                </Grid>
+                                                <Grid item xs={12} lg={4}>
+                                                    <ListItemText primary="Bill of Materials Generator"
+                                                                  secondary="Tool to help sales team generate bill of materials for customer orders with ease
                                                           and import them into SalesForce to convert to opportunity."/>
-                                            <ListItemText primary="Secure Access as a Service"
-                                                          secondary="POC for orchestration of Pulse VPN over AWS as a service. "/>
-                                            <ListItemText primary="Hackathon Portal"
-                                                          secondary="Web Portal to host internal hackathon events. Participants can create projects
+                                                </Grid>
+                                                <Grid item xs={12} lg={4}>
+                                                    <ListItemText primary="Secure Access as a Service"
+                                                                  secondary="POC for orchestration of Pulse VPN over AWS as a service. "/>
+                                                </Grid>
+                                                <Grid item xs={12} lg={4}>
+                                                    <ListItemText primary="Hackathon Portal"
+                                                                  secondary="Web Portal to host internal hackathon events. Participants can create projects
                                                           and follow other projects and judges can review & rate projects. "/>
-                                            <ListItemText primary="Welcome Sign-in Portal"
-                                                          secondary="Web Portal where guests can sign-in and emails are sent to the host to receive their guests.
+                                                </Grid>
+                                                <Grid item xs={12} lg={4}>
+                                                    <ListItemText primary="Welcome Sign-in Portal"
+                                                                  secondary="Web Portal where guests can sign-in and emails are sent to the host to receive their guests.
                                                           Also, prints a name tag for the guests with guest & host details."/>
-                                            <ListItemText primary="Suite Capacity Estimator"
-                                                          secondary="Used by Sales Engineers to estimate the equipment the customer needs."/>
+                                                </Grid>
+                                                <Grid item xs={12} lg={4}>
+                                                    <ListItemText primary="Suite Capacity Estimator"
+                                                                  secondary="Used by Sales Engineers to estimate the equipment the customer needs."/>
+                                                </Grid>
+                                            </Grid>
                                         </ListItem>
                                     </List>
                                 </CardContent>
@@ -221,14 +235,20 @@ class Experience extends Component {
                                                 gutterBottom>Relevant Experience</Typography>
                                     <List disablePadding>
                                         <ListItem>
-                                            <ListItemText primary="Pulse Automation Team"
-                                                          secondary="Developing framework to enable automation of test suites in Perl, AutoIT, vSphere, Jenkins.
+                                            <Grid container spacing={24}>
+                                                <Grid item xs={12} lg={6}>
+                                                    <ListItemText primary="Pulse Automation Team"
+                                                                  secondary="Developing framework to enable automation of test suites in Perl, AutoIT, vSphere, Jenkins.
                                                                      Writing perl scripts to automate various test suites in Pulse."/>
 
-                                            <ListItemText primary="Web Development / Internal Tools"
-                                                          secondary="Developed a new portal for collect, analyze and display job results and various statistics
+                                                </Grid>
+                                                <Grid item xs={12} lg={6}>
+                                                    <ListItemText primary="Web Development / Internal Tools"
+                                                                  secondary="Developed a new portal for collect, analyze and display job results and various statistics
                                                           for daily and historical data using Ruby on Rails, Highcharts.
                                                           Enhancements to PBU Dashboard Components."/>
+                                                </Grid>
+                                            </Grid>
                                         </ListItem>
                                     </List>
                                 </CardContent>
