@@ -3,18 +3,18 @@ import {IconButton, ListItem, ListItemSecondaryAction, ListItemText} from "@mate
 import VerifiedUserIcon from "@material-ui/icons/VerifiedUser";
 
 class Certificate extends Component {
-    render() {
-        return (
-            <ListItem>
-                <ListItemText primary={this.props.title} secondary={this.props.date}/>
-                <ListItemSecondaryAction>
-                    <IconButton aria-label="Verify" target="_blank" href={this.props.url}>
-                        <VerifiedUserIcon/>
-                    </IconButton>
-                </ListItemSecondaryAction>
-            </ListItem>
-        )
-    }
+  render() {
+    return (
+      <ListItem>
+        <ListItemText primary={this.props.title} secondary={this.props.date}/>
+        <ListItemSecondaryAction>
+          <IconButton aria-label="Verify" target="_blank" href={this.props.url}>
+            <VerifiedUserIcon/>
+          </IconButton>
+        </ListItemSecondaryAction>
+      </ListItem>
+    )
+  }
 }
 
 export default Certificate;

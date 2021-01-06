@@ -1,4 +1,4 @@
 export {
-    setNavIndex,
-    getNavIndex
+  setNavIndex,
+  getNavIndex
 } from './nav';
