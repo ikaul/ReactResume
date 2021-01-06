@@ -3,10 +3,8 @@ import {
     Route,
     Switch
 } from 'react-router-dom';
-import Grid from "@material-ui/core/Grid";
-import Paper from "@material-ui/core/Paper";
 import withRoot from "../withRoot";
-import {withStyles} from "@material-ui/core";
+import {withStyles, Grid, Paper} from "@material-ui/core";
 import Overview from '../Tabs/overview';
 import Experience from '../Tabs/experience';
 import Education from '../Tabs/education';
@@ -16,7 +14,7 @@ import NotFound from '../not_found';
 
 const styles = theme => ({
     paper: {
-        padding: theme.spacing.unit * 10,
+        padding: theme.spacing(10),
         textAlign: 'left',
         height: '85vh',
         maxHeight: '100%',
@@ -28,7 +26,7 @@ class Dashboard extends Component {
     render() {
         const {classes} = this.props;
         return (
-            <Grid container spacing={24}>
+            <Grid container spacing={3}>
                 <Grid item xs={12} sm={12}>
                     <Paper className={classes.paper}>
                         <Switch>

@@ -1,8 +1,8 @@
 import React from 'react';
 import {MuiThemeProvider, createMuiTheme} from '@material-ui/core/styles';
-import blueGrey from '@material-ui/core/colors/blueGrey';
-import teal from '@material-ui/core/colors/teal';
 import CssBaseline from '@material-ui/core/CssBaseline';
+
+import { blueGrey, teal } from '@material-ui/core/colors';
 
 // A theme with custom primary and secondary color.
 const theme = createMuiTheme({
@@ -19,7 +19,6 @@ const theme = createMuiTheme({
         },
     },
     typography: {
-        useNextVariants: true,
     },
 });
 

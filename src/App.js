@@ -12,7 +12,8 @@ import {
     Menu,
     MenuItem,
     Toolbar,
-    Typography
+    Typography,
+    withStyles
 } from '@material-ui/core';
 import {
     Assignment as AssignmentIcon,
@@ -22,7 +23,6 @@ import {
     Menu as MenuIcon,
     Work as WorkIcon
 } from '@material-ui/icons';
-import {withStyles} from '@material-ui/core/styles';
 import withRoot from './withRoot';
 import Dashboard from './Dashboard/dashboard';
 import * as actions from './actions/index';

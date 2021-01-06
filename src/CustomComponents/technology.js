@@ -2,8 +2,8 @@ import React, {Component} from 'react';
 import {
     Avatar,
     Chip,
+    withStyles
 } from "@material-ui/core";
-import {withStyles} from "@material-ui/core/es/styles";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import withRoot from "../withRoot";
 import {blue, grey, red, blueGrey} from "@material-ui/core/colors";
@@ -12,7 +12,7 @@ import rails from '../assets/images/rails.png';
 
 const styles = theme => ({
     chip: {
-        margin: theme.spacing.unit / 2,
+        margin: theme.spacing(0.5),
     },
     reactAvatar: {
         color: blue[200],
